@@ -1,4 +1,9 @@
-# patreon-ruby
+# patreon-ruby fork
+
+What's changed in this fork?
+---
+This fork addresses [this bug](https://github.com/Patreon/patreon-ruby/issues/13) in the original patreon library
+
 Interact with the Patreon API via OAuth.
 
 Get the gem from [RubyGems](https://rubygems.org/gems/patreon)
