@@ -37,12 +37,6 @@ module Patreon
       http = Net::HTTP.new("www.patreon.com", 443)
       http.use_ssl = true
 
-      # TODO: It would be nice if we verified our certs
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-      #SECURITY HOLE
-      http.set_debug_output($stdout) if ENV['DEBUG']
-
       req = Net::HTTP::Get.new("/api/oauth2/api/#{suffix}")
       req['Authorization'] = "Bearer #{@access_token}"
       req['User-Agent'] = Utils::Client.user_agent_string
