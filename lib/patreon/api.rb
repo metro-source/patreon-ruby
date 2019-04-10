@@ -44,7 +44,7 @@ module Patreon
     end
 
     def parse_json(json)
-      JSON::Api::Vanilla.parse(json)
+      JSON.parse(json, object_class: OpenStruct)
     end
   end
 end
