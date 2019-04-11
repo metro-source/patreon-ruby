@@ -5,7 +5,7 @@ module Patreon
     end
 
     def fetch_identity(opts = {})
-      get_json(Utils::JSONAPI::URLUtil.build_url('identity',  opts[:includes], opts[:fields]))
+      get_parse_json(Utils::JSONAPI::URLUtil.build_url('identity',  opts[:includes], opts[:fields]))
     end
 
     # def fetch_user(opts = {})

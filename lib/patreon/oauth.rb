@@ -17,7 +17,7 @@ module Patreon
 
     def refresh_token(refresh_token, redirect_uri)
       update_token({
-          "grant_type" => "refresh_token",
+          "grant_type" => "access_token",
           "refresh_token" => refresh_token,
           "client_id" => @client_id,
           "client_secret" => @client_secret
