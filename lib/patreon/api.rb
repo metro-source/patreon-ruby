@@ -9,7 +9,13 @@ module Patreon
     end
 
     def fetch_campaign_members(campaign_id, opts = {})
-      get_parse_json Utils::JSONAPI::URLUtil.build_url("campaigns/#{campaign_id}/members",  opts[:includes], opts[:fields])
+      params = {}
+
+      if opts[:cursor].present?
+        params['page[cursor]'] = opts[:cursor]
+      end
+
+      get_parse_json Utils::JSONAPI::URLUtil.build_url("campaigns/#{campaign_id}/members?#{ Rack::Utils.build_query(params) }",  opts[:includes], opts[:fields])
     end
 
     # def fetch_user(opts = {})
