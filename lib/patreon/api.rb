@@ -16,10 +16,7 @@ module Patreon
       end
 
       if opts[:count].present?
-        # Which one is it?
-        # Patreon's API documentation is horrible and doesn't clarify
         params['page[count]'] = opts[:count]
-        params['page_count'] = opts[:count]
       end
 
       get_parse_json Utils::JSONAPI::URLUtil.build_url("campaigns/#{campaign_id}/members?#{ Rack::Utils.build_query(params) }",  opts[:includes], opts[:fields])
