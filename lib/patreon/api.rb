@@ -30,15 +30,15 @@ module Patreon
     #   get_parse_json(Utils::JSONAPI::URLUtil.build_url('current_user/campaigns', opts[:includes], opts[:fields]))
     # end
 
+    def access_token= token
+      @access_token = token
+    end
+
     private
 
     def get_parse_json(suffix)
       json = get_json(suffix)
       parse_json(json)
-    end
-
-    def access_token= token
-      @access_token = token
     end
 
     def get_json(suffix)
