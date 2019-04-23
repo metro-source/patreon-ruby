@@ -37,6 +37,10 @@ module Patreon
       parse_json(json)
     end
 
+    def access_token= token
+      @access_token = token
+    end
+
     def get_json(suffix)
       http = Net::HTTP.new("www.patreon.com", 443)
       http.use_ssl = true
