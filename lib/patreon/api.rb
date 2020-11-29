@@ -12,11 +12,11 @@ module Patreon
       params = {}
 
       if opts[:cursor].present?
-        params['page%5Bcursor%5D'] = opts[:cursor]
+        params['page[cursor]'] = opts[:cursor]
       end
 
       if opts[:count].present?
-        params['page%5Bcount%5D'] = opts[:count]
+        params['page[count]'] = opts[:count]
       end
 
       get_parse_json Utils::JSONAPI::URLUtil.build_url("campaigns/#{campaign_id}/members?#{ Rack::Utils.build_query(params) }",  opts[:includes], opts[:fields])
